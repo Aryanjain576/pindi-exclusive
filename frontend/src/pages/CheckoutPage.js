@@ -13,7 +13,7 @@ export default function CheckoutPage() {
   const { cart, totalPrice, clearCart } = useCart();
   const { user, isLoggedIn } = useAuth();
   const [loading, setLoading] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState("cod");
+  const [paymentMethod] = useState("cod");
 
   // Redirect to login if not authenticated
   useEffect(() => {
