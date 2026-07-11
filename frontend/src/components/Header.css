@@ -1,0 +1,156 @@
+/* ── Header.css ── */
+
+.header {
+  position: sticky; top: 0; z-index: 1000;
+  background: var(--white);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: var(--transition);
+}
+.header-scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.13); }
+
+/* Top bar */
+.header-topbar {
+  background: var(--dark);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.78rem; padding: 6px 0;
+}
+.topbar-inner {
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+/* Main header */
+.header-main { padding: 14px 0; border-bottom: 1px solid var(--gray-100); }
+.header-inner {
+  display: flex; align-items: center; gap: 20px;
+}
+
+/* Logo */
+.logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.logo-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white; display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700;
+  box-shadow: 0 4px 12px rgba(200,16,46,0.3);
+}
+.logo-name {
+  display: block; font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 700; color: var(--dark); line-height: 1.2;
+}
+.logo-tag {
+  display: block; font-size: 0.7rem; color: var(--gray-500);
+  font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase;
+}
+
+/* Search */
+.search-form {
+  flex: 1; display: flex; align-items: center;
+  border: 2px solid var(--gray-200); border-radius: var(--radius-sm);
+  overflow: hidden; transition: var(--transition); max-width: 580px;
+}
+.search-form:focus-within { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(200,16,46,0.1); }
+.search-input {
+  flex: 1; padding: 10px 16px; border: none;
+  font-size: 0.92rem; background: transparent; color: var(--gray-800);
+}
+.search-btn {
+  padding: 10px 18px; background: var(--primary); color: white;
+  border: none; font-size: 1rem; cursor: pointer; transition: var(--transition);
+}
+.search-btn:hover { background: var(--primary-dark); }
+
+/* Header actions */
+.header-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+
+/* User menu */
+.user-menu { position: relative; }
+.user-btn {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--gray-50); border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-sm); padding: 7px 14px;
+  font-size: 0.88rem; font-weight: 600; color: var(--gray-700);
+  cursor: pointer; transition: var(--transition);
+}
+.user-btn:hover { border-color: var(--primary); color: var(--primary); }
+.user-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--primary); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; font-weight: 700;
+}
+.user-name { max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chevron { font-size: 0.7rem; color: var(--gray-400); }
+
+.user-dropdown {
+  position: absolute; top: calc(100% + 10px); right: 0;
+  width: 220px; background: var(--white); border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl); border: 1px solid var(--gray-200);
+  overflow: hidden; animation: dropIn 0.2s ease;
+}
+@keyframes dropIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.dropdown-header { padding: 14px 16px; background: var(--gray-50); }
+.dropdown-header strong { display: block; font-size: 0.92rem; color: var(--gray-900); }
+.dropdown-header small { font-size: 0.78rem; color: var(--gray-500); }
+.user-dropdown hr { border: none; border-top: 1px solid var(--gray-200); }
+.dropdown-item {
+  display: block; width: 100%; padding: 11px 16px;
+  background: none; border: none; text-align: left;
+  font-size: 0.88rem; font-weight: 500; cursor: pointer;
+  transition: var(--transition);
+}
+.dropdown-item:hover { background: var(--gray-50); }
+.logout-item { color: var(--error); }
+.logout-item:hover { background: #fef2f2; }
+
+/* Auth buttons */
+.auth-buttons { display: flex; gap: 8px; }
+
+/* Cart */
+.cart-btn {
+  position: relative; display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: var(--radius-sm);
+  font-size: 1.3rem; transition: var(--transition);
+  background: var(--gray-50); border: 1.5px solid var(--gray-200);
+}
+.cart-btn:hover { border-color: var(--primary); background: var(--primary-light); }
+.cart-badge {
+  position: absolute; top: -7px; right: -7px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--primary); color: white;
+  font-size: 0.68rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid white;
+}
+
+/* Hamburger */
+.hamburger {
+  width: 40px; height: 40px; background: var(--gray-100);
+  border-radius: var(--radius-sm); font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* Nav */
+.header-nav { background: var(--gray-50); border-top: 1px solid var(--gray-200); }
+.nav-inner { display: flex; gap: 4px; padding: 6px 0; overflow-x: auto; }
+.nav-link {
+  padding: 7px 16px; border-radius: var(--radius-sm);
+  font-size: 0.87rem; font-weight: 500; color: var(--gray-600);
+  transition: var(--transition); white-space: nowrap;
+}
+.nav-link:hover, .nav-link.active { background: var(--primary-light); color: var(--primary); }
+
+/* Mobile menu */
+.mobile-menu {
+  background: var(--white); border-top: 1px solid var(--gray-200);
+  padding: 16px; animation: slideDown 0.2s ease;
+}
+@keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.mobile-search { margin-bottom: 12px; }
+.mobile-nav { display: flex; flex-direction: column; gap: 2px; }
+.mobile-nav-link {
+  display: block; padding: 11px 14px; border-radius: var(--radius-sm);
+  font-size: 0.92rem; font-weight: 500; color: var(--gray-700);
+  transition: var(--transition); background: none; border: none; text-align: left; width: 100%;
+}
+.mobile-nav-link:hover { background: var(--gray-50); color: var(--primary); }
+.logout-mobile { color: var(--error); }
